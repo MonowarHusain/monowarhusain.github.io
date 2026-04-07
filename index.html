@@ -436,49 +436,39 @@
         // =======================================================
         const DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
 
-        document.getElementById('discord-form').addEventListener('submit', async function (e) {
+        document.getElementById('discord-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-
+            
             const sender = document.getElementById('sender-info').value;
             const message = document.getElementById('message').value;
             const statusDiv = document.getElementById('form-status');
             const submitBtn = document.getElementById('submit-btn');
-
-            if (DISCORD_WEBHOOK_URL === "YOUR_DISCORD_WEBHOOK_URL_HERE" || DISCORD_WEBHOOK_URL.trim() === "") {
-                statusDiv.style.color = "#d73a49"; // GitHub red
-                statusDiv.innerText = "System Error: Webhook configuration missing.";
-                return;
-            }
-
+        
             submitBtn.innerText = "Transmitting...";
             submitBtn.disabled = true;
-
-            const payload = {
-                content: `**[Academic Portfolio Inquiry]**\n**From:** ${sender}\n**Message:** ${message}`
-            };
-
+        
             try {
-                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                const response = await fetch('/api/contact', { // Points to your serverless function
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({ sender, message })
                 });
-
+        
                 if (response.ok) {
-                    statusDiv.style.color = "#28a745"; // GitHub green
+                    statusDiv.style.color = "#28a745";
                     statusDiv.innerText = "Message transmitted successfully.";
                     document.getElementById('discord-form').reset();
                 } else {
-                    throw new Error('Network protocol error');
+                    throw new Error();
                 }
             } catch (error) {
                 statusDiv.style.color = "#d73a49";
-                statusDiv.innerText = "Transmission failure. Please utilize the direct email link provided above.";
+                statusDiv.innerText = "Transmission failure. Please use direct email.";
             } finally {
                 submitBtn.innerText = "Transmit Message";
                 submitBtn.disabled = false;
             }
-        });
+});
     </script>
 </body>
 
