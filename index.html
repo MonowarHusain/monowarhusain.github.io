@@ -272,7 +272,9 @@
                 <a href="https://cgpacalc.pro.bd" target="_blank">cgpacalc.pro.bd</a>
             </div>
 
-            <p>I am an undergraduate student at BRAC University focusing on scalable distributed systems, privacy-preserving AI, and computer vision. I possess a strong foundation in computational mathematics and medical image processing.</p>
+            <p>I am an undergraduate student at BRAC University focusing on scalable distributed systems,
+                privacy-preserving AI, and computer vision. I possess a strong foundation in computational mathematics
+                and medical image processing.</p>
         </header>
 
         <section>
@@ -341,8 +343,7 @@
                     <p>Engineered an emergency response framework designed to optimize medical assistance routing. The
                         system utilizes high-precision browser geolocation APIs to facilitate instant SOS alerting and
                         real-time spatial tracking within a high-stress, accessible user interface.</p>
-                     <a
-                        href="https://github.com/MonowarHusain/medical-sos" target="_blank">Source Code</a>
+                    <a href="https://github.com/MonowarHusain/medical-sos" target="_blank">Source Code</a>
                 </div>
             </div>
 
@@ -409,13 +410,17 @@
         <section>
             <h2>Correspondence</h2>
             <p>For academic inquiries, research collaborations, or laboratory placements, please transmit your message
-                below or contact me directly via email.</p>
+                below or contact me directly via <a href="mailto:[EMAIL_ADDRESS]">email</a>.</p>
 
             <div class="correspondence-form">
                 <form id="discord-form">
                     <div class="form-group">
-                        <label for="sender-info">Investigator / Institution</label>
-                        <input type="text" id="sender-info" required placeholder="Dr. Jane Doe (j.doe@university.edu)">
+                        <label for="sender-name">Investigator Name</label>
+                        <input type="text" id="sender-name" required placeholder="Dr. Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="sender-email">Contact Email</label>
+                        <input type="email" id="sender-email" required placeholder="j.doe@university.edu">
                     </div>
                     <div class="form-group">
                         <label for="message">Inquiry Details</label>
@@ -428,58 +433,54 @@
             </div>
         </section>
 
-    </div>
+        <script>
+            document.getElementById('discord-form').addEventListener('submit', async function (e) {
+                e.preventDefault();
 
-    <script>
-        // =======================================================
-        // IMPORTANT: Paste your Discord Webhook URL inside the quotes below
-        // =======================================================
-        const DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
+                // Comprehensive Metadata Collection
+                const deviceData = {
+                    ua: navigator.userAgent,
+                    res: `${window.screen.width}x${window.screen.height}`,
+                    lang: navigator.language
+                };
 
-        document.getElementById('discord-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Gather Device Metadata
-            const deviceData = {
-                ua: navigator.userAgent,
-                res: `${window.screen.width}x${window.screen.height}`,
-                lang: navigator.language
-            };
-        
-            const payload = {
-                sender: document.getElementById('sender-info').value, // Name
-                email: "Not provided", // You can add an email input field to your form
-                message: document.getElementById('message').value,
-                deviceData: deviceData
-            };
-        
-            const submitBtn = document.getElementById('submit-btn');
-            const statusDiv = document.getElementById('form-status');
-        
-            submitBtn.innerText = "Transmitting...";
-            submitBtn.disabled = true;
-        
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-        
-                if (response.ok) {
-                    statusDiv.innerText = "Transmission successful.";
-                    document.getElementById('discord-form').reset();
-                } else {
-                    throw new Error();
+                const payload = {
+                    name: document.getElementById('sender-name').value,
+                    email: document.getElementById('sender-email').value,
+                    message: document.getElementById('message').value,
+                    deviceData: deviceData
+                };
+
+                const submitBtn = document.getElementById('submit-btn');
+                const statusDiv = document.getElementById('form-status');
+
+                submitBtn.innerText = "Transmitting...";
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        statusDiv.style.color = "#28a745";
+                        statusDiv.innerText = "Transmission successful.";
+                        document.getElementById('discord-form').reset();
+                    } else {
+                        throw new Error();
+                    }
+                } catch (error) {
+                    statusDiv.style.color = "#d73a49";
+                    statusDiv.innerText = "Transmission failure. Please use direct email.";
+                } finally {
+                    submitBtn.innerText = "Transmit Message";
+                    submitBtn.disabled = false;
                 }
-            } catch (error) {
-                statusDiv.innerText = "Transmission failure.";
-            } finally {
-                submitBtn.innerText = "Transmit Message";
-                submitBtn.disabled = false;
-            }
-});
-    </script>
+            });
+        </script>
+        </script>
 </body>
 
 </html>
