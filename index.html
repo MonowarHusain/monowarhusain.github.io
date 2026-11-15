@@ -48,7 +48,8 @@
       "sameAs": [
         "https://github.com/MonowarHusain",
         "https://www.linkedin.com/in/monowarhusain/",
-        "https://cgpacalc.pro.bd"
+        "https://cgpacalc.pro.bd",
+        "https://monowarhusain.github.io/iMono-blog/"
       ]
     }
     </script>
@@ -56,7 +57,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
 
     <style>
@@ -75,8 +76,12 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.6;
@@ -97,6 +102,33 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            margin-bottom: 36px;
+        }
+
+        .top-nav a {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+
+        .top-nav a:hover {
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        .top-nav .nav-sep {
+            color: var(--rule-color);
+            font-size: 0.85rem;
+            user-select: none;
         }
 
         /* Typography */
@@ -135,6 +167,14 @@
             margin-bottom: 16px;
             color: var(--text-main);
             text-align: justify;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            background: #f4f4f4;
+            padding: 1px 4px;
+            border-radius: 2px;
         }
 
         /* Contact Header */
@@ -193,7 +233,7 @@
         }
 
         .tech-tags {
-            font-family: SFMono-Regular, Consolas, monospace;
+            font-family: 'Fira Code', monospace;
             font-size: 0.8rem;
             color: var(--text-muted);
             margin: 8px 0;
@@ -281,6 +321,17 @@
 
         /* Responsive */
         @media (max-width: 650px) {
+            p {
+                text-align: left;
+            }
+
+            .top-nav {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 8px 12px;
+                margin-bottom: 24px;
+            }
+
             .cv-entry {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -304,26 +355,38 @@
 
     <div class="document">
 
+        <!-- Top Navigation -->
+        <nav class="top-nav" aria-label="Quick Navigation">
+            <a href="#projects">Projects</a>
+            <span class="nav-sep">|</span>
+            <a href="#writing">Writing</a>
+            <span class="nav-sep">|</span>
+            <a href="#service">Service</a>
+            <span class="nav-sep">|</span>
+            <a href="#contact">Contact</a>
+            <span class="nav-sep">|</span>
+            <a href="https://monowarhusain.github.io/iMono-blog/" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+        </nav>
+
         <header>
             <h1>Monowar Husain</h1>
-            <div class="subtitle">Prospective PhD Student | Undergraduate Researcher at BRAC University (BRACU)</div>
+            <div class="subtitle">B.Sc. Candidate in Computer Science | Prospective PhD Applicant</div>
 
             <div class="contact-info">
                 <a href="mailto:monowarhusainomi@gmail.com">monowarhusainomi@gmail.com</a>
                 <span class="separator">|</span>
-                <a href="https://github.com/MonowarHusain" target="_blank">github.com/MonowarHusain</a>
+                <a href="https://github.com/MonowarHusain" target="_blank" rel="noopener noreferrer">github.com/MonowarHusain</a>
                 <span class="separator">|</span>
-                <a href="https://www.linkedin.com/in/monowarhusain/" target="_blank">linkedin.com/in/monowarhusain</a>
+                <a href="https://www.linkedin.com/in/monowarhusain/" target="_blank" rel="noopener noreferrer">linkedin.com/in/monowarhusain</a>
                 <span class="separator">|</span>
-                <a href="https://cgpacalc.pro.bd" target="_blank">cgpacalc.pro.bd</a>
+                <a href="https://monowarhusain.github.io/iMono-blog" target="_blank" rel="noopener noreferrer">monowarhusain.github.io/iMono-blog</a>
+                <!-- <span class="separator">|</span> <a href="assets/Monowar_Husain_CV.pdf" target="_blank">CV (PDF)</a> -->
             </div>
 
-            <p>I am an undergraduate student in Computer Science &amp; Engineering at BRAC University (BRACU) focusing on scalable distributed systems,
-                privacy-preserving AI, and computer vision. I possess a strong foundation in computational mathematics
-                and medical image processing.</p>
+            <p>I am a final-year Computer Science undergraduate at BRAC University (BRACU, Expected May 2027), focusing on Computer Vision, Medical Image Processing, and Privacy-Preserving/Distributed Systems. Grounded in computational mathematics and system architecture, I am actively seeking PhD opportunities for Fall 2027.</p>
         </header>
 
-        <section>
+        <section id="education">
             <h2>Education</h2>
 
             <div class="cv-entry">
@@ -334,44 +397,69 @@
                     <ul>
                         <li><strong>Minor:</strong> Economics</li>
                         <li><strong>Core Coursework:</strong> Data Structures, Algorithms, Database Systems, Computer
-                            Networks, Automata & Computability, Computer Graphics, Linear Algebra, Fourier Analysis, Pattern Recognition, Numerical Methods, Computer Vision.
+                            Networks, Automata &amp; Computability, Computer Graphics, Linear Algebra, Fourier Analysis, Pattern Recognition, Numerical Methods, Computer Vision.
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="interests">
             <h2>Research Interests &amp; Skills</h2>
 
             <div class="cv-entry">
                 <div class="cv-meta">Domains</div>
                 <div class="cv-content">
-                    Machine Learning, Artificial Intelligence, Natural Language Processing, Distributed Systems,
-                    Computational Graphics, Computer Vision, Bioinformatics, Pattern Recognition and Medical Image Processing.
+                    Computer Vision &amp; Medical Image Processing, Privacy-Preserving &amp; Distributed Systems, Applied Machine Learning, Pattern Recognition
                 </div>
             </div>
             <div class="cv-entry">
                 <div class="cv-meta">Technical</div>
                 <div class="cv-content">
                     <strong>Languages:</strong> Python, C, JavaScript (ES6+), SQL, HTML/CSS, LaTeX<br>
-                    <strong>Frameworks & APIs:</strong> React, Next.js, Node.js, OpenGL, Tailwind CSS<br>
+                    <strong>Frameworks &amp; APIs:</strong> React, Next.js, Node.js, OpenGL, Tailwind CSS<br>
                     <strong>Tools:</strong> Git, UNIX environments, Overleaf
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Selected Research &amp; Architecture</h2>
+        <section id="projects">
+            <h2>Selected Projects &amp; Systems</h2>
+
+            <div class="cv-entry">
+                <div class="cv-meta">2024 – Present</div>
+                <div class="cv-content">
+                    <h3>CGPACalc.pro: Privacy-Preserving Academic Auditing Suite</h3>
+                    <div class="org">Live Web Platform · Independent Development</div>
+                    <div class="tech-tags">JavaScript, PDF.js, Chart.js, RegEx</div>
+                    <p>Architected a client-side computational utility that securely parses raw university transcripts into interactive degree audits. Implemented local parsing logic via <code>PDF.js</code> to guarantee zero server-side data transmission, ensuring rigorous student data privacy. Integrated algorithmic retake calculations and dynamic track detection.</p>
+                    <a href="https://cgpacalc.pro.bd" target="_blank" rel="noopener noreferrer">Live Site ↗</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/MonowarHusain/bracu_cgpacalc" target="_blank" rel="noopener noreferrer">Source Code</a>
+                </div>
+            </div>
+
+            <!-- ADD PROJECT WEBSITE HERE
+            <div class="cv-entry">
+                <div class="cv-meta">YYYY – Present</div>
+                <div class="cv-content">
+                    <h3>Project Title: Subtitle or Focus Area</h3>
+                    <div class="org">Live Web Platform</div>
+                    <div class="tech-tags">Framework, Library, Protocol</div>
+                    <p><strong>Problem:</strong> Critical engineering or accessibility problem being solved.</p>
+                    <p><strong>Architecture:</strong> System design, client-side computation, database schema, or pipeline.</p>
+                    <p><strong>Outcome:</strong> Verified performance, active user metrics, or operational reliability.</p>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://github.com/MonowarHusain/repo" target="_blank" rel="noopener noreferrer">Source Code</a>
+                </div>
+            </div>
+            -->
 
             <div class="cv-entry">
                 <div class="cv-meta">2026</div>
                 <div class="cv-content">
                     <h3>Meal Distribution System: Scalable Logistics &amp; Payment Infrastructure</h3>
-                    <div class="org">Database Systems Coursework - Spring'26</div>
+                    <div class="org">Database Systems Coursework — Spring 2026</div>
                     <div class="tech-tags">Next.js, Aiven MySQL, Tailwind CSS, Payment Gateways</div>
-                    <p>Architected a full-stack logistics platform featuring a 3NF-normalized MySQL database on Aiven. I engineered the core functional engine, including secure bKash/Card payment integrations, a real-time kitchen management state machine, and a centralized administrative portal for role-based system oversight and catalog management.</p>
-                    <a href="https://github.com/MonowarHusain/meal-distribution" target="_blank">Source Code</a>
+                    <p>Architected a full-stack logistics platform featuring a 3NF-normalized MySQL database on Aiven. Engineered the core functional engine, including secure bKash/Card payment integrations, a real-time kitchen management state machine, and a centralized administrative portal for role-based system oversight and catalog management.</p>
+                    <a href="https://github.com/MonowarHusain/meal-distribution" target="_blank" rel="noopener noreferrer">Source Code</a>
                 </div>
             </div>
 
@@ -379,27 +467,10 @@
                 <div class="cv-meta">2025</div>
                 <div class="cv-content">
                     <h3>Medical SOS: Real-Time Geolocation Infrastructure</h3>
-                    <div class="org">Database Systems Coursework - Fall'25</div>
+                    <div class="org">Database Systems Coursework — Fall 2025</div>
                     <div class="tech-tags">Next.js, React, Geolocation API</div>
-                    <p>Engineered an emergency response framework designed to optimize medical assistance routing. The
-                        system utilizes high-precision browser geolocation APIs to facilitate instant SOS alerting and
-                        real-time spatial tracking within a high-stress, accessible user interface.</p>
-                    <a href="https://github.com/MonowarHusain/medical-sos" target="_blank">Source Code</a>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-meta">2024 – Present</div>
-                <div class="cv-content">
-                    <h3>CGPACalc.pro: Privacy-Preserving Academic Auditing Suite</h3>
-                    <div class="org">Independent Development</div>
-                    <div class="tech-tags">JavaScript, PDF.js, Chart.js, RegEx</div>
-                    <p>Architected a client-side computational utility that securely parses raw university transcripts
-                        into interactive degree audits. Implemented local parsing logic via <code>PDF.js</code> to
-                        guarantee zero server-side data transmission, ensuring rigorous student data privacy. Integrated
-                        algorithmic retake calculations and dynamic track detection.</p>
-                    <a href="https://cgpacalc.pro.bd" target="_blank">Live Application</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a
-                        href="https://github.com/MonowarHusain/bracu_cgpacalc" target="_blank">Source Code</a>
+                    <p>Engineered an emergency response framework designed to optimize medical assistance routing. The system utilizes high-precision browser geolocation APIs to facilitate instant SOS alerting and real-time spatial tracking within a high-stress, accessible user interface.</p>
+                    <a href="https://github.com/MonowarHusain/medical-sos" target="_blank" rel="noopener noreferrer">Source Code</a>
                 </div>
             </div>
 
@@ -409,16 +480,49 @@
                     <h3>Tank-Battle-3D</h3>
                     <div class="org">Computer Graphics Coursework</div>
                     <div class="tech-tags">Python, OpenGL</div>
-                    <p>Programmed interactive graphical simulations utilizing raw OpenGL bindings, entirely bypassing
-                        commercial rendering engines. Emphasis was placed on the foundational implementation of Midpoint
-                        Line algorithms, mathematical matrix transformations, and multi-perspective rendering pipelines.
-                    </p>
-                    <a href="https://github.com/MonowarHusain/Tank-Battle-3D" target="_blank">View Code Repository</a>
+                    <p>Programmed interactive graphical simulations utilizing raw OpenGL bindings, entirely bypassing commercial rendering engines. Emphasis was placed on the foundational implementation of Midpoint Line algorithms, mathematical matrix transformations, and multi-perspective rendering pipelines.</p>
+                    <a href="https://github.com/MonowarHusain/Tank-Battle-3D" target="_blank" rel="noopener noreferrer">Source Code</a>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="writing">
+            <h2>Selected Writing — iMono-blog</h2>
+
+            <div class="cv-entry">
+                <div class="cv-meta">Technical Notes</div>
+                <div class="cv-content">
+                    <h3>Image Thresholding Logic &amp; Segmentation Notes</h3>
+                    <div class="org">Computer Vision &amp; Digital Image Processing · Technical Essay</div>
+                    <p>An analytical review of intensity transformations, global versus local adaptive thresholding (Otsu's formulation), and spatial filtering techniques in medical image segmentation pipelines.</p>
+                    <a href="https://monowarhusain.github.io/iMono-blog/" target="_blank" rel="noopener noreferrer">Read Essay ↗</a>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-meta">Essay</div>
+                <div class="cv-content">
+                    <h3>From Dreams to Doing: Behavioral Systems &amp; Consistency</h3>
+                    <div class="org">Productivity &amp; Engineering Mindset · Essay</div>
+                    <p>A systematic analysis of behavioral feedback loops, execution friction reduction, and building reliable routines for high-output engineering and long-term academic research.</p>
+                    <a href="https://monowarhusain.github.io/iMono-blog/" target="_blank" rel="noopener noreferrer">Read Essay ↗</a>
+                </div>
+            </div>
+
+            <!-- ADD UPCOMING WRITING / VISION & SYSTEMS NOTES HERE
+            <div class="cv-entry">
+                <div class="cv-meta">Upcoming</div>
+                <div class="cv-content">
+                    <h3>Distributed Inference &amp; Edge Vision Architectures</h3>
+                    <div class="org">Computer Vision &amp; Systems · Research Notes</div>
+                    <p>Architectural breakdown of latency-bounded model partitioning, tensor quantization, and privacy-preserving distributed verification in edge computing environments.</p>
+                    <a href="https://monowarhusain.github.io/iMono-blog/" target="_blank" rel="noopener noreferrer">Read on iMono-blog ↗</a>
+                </div>
+            </div>
+            -->
+        </section>
+
+        <section id="service">
             <h2>Leadership &amp; Academic Service</h2>
 
             <div class="cv-entry">
@@ -426,9 +530,7 @@
                 <div class="cv-content">
                     <h3>Student Ambassador</h3>
                     <div class="org">Microsoft Learn</div>
-                    <p>Organize technical workshops and mentor undergraduate cohorts on cloud infrastructure and
-                        software engineering methodologies, acting as a technical liaison between the student body and
-                        industry platforms.</p>
+                    <p>Organize technical workshops and mentor undergraduate cohorts on cloud infrastructure and software engineering methodologies, acting as a technical liaison between the student body and industry platforms.</p>
                 </div>
             </div>
 
@@ -437,8 +539,7 @@
                 <div class="cv-content">
                     <h3>Ambassador</h3>
                     <div class="org">International Astronomy and Astrophysics Competition</div>
-                    <p>Advocate for scientific literacy and global engagement in applied astrophysics, operating within
-                        an international academic framework.</p>
+                    <p>Advocate for scientific literacy and global engagement in applied astrophysics, operating within an international academic framework.</p>
                 </div>
             </div>
 
@@ -447,8 +548,7 @@
                 <div class="cv-content">
                     <h3>Co-Founder &amp; Technical Lead</h3>
                     <div class="org">Search Everything.net</div>
-                    <p>Direct the technical architecture and scaling strategy for a digital services platform, focusing
-                        on backend infrastructure availability and modular tool deployment.</p>
+                    <p>Direct the technical architecture and scaling strategy for a digital services platform, focusing on backend infrastructure availability and modular tool deployment.</p>
                 </div>
             </div>
 
@@ -457,16 +557,14 @@
                 <div class="cv-content">
                     <h3>Executive (HR)</h3>
                     <div class="org">BRAC University History Club</div>
-                    <p>Manage recruitment pipelines, onboarding protocols, and internal communications for university
-                        club operations.</p>
+                    <p>Manage recruitment pipelines, onboarding protocols, and internal communications for university club operations.</p>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="contact">
             <h2>Correspondence</h2>
-            <p>For academic inquiries, research collaborations, or laboratory placements, please transmit your message
-                below or contact me directly via <a href="mailto:monowarhusainomi@gmail.com">email</a>.</p>
+            <p>For academic inquiries, research collaborations, or laboratory placements, please transmit your message below or contact me directly via <a href="mailto:monowarhusainomi@gmail.com">email</a>.</p>
 
             <div class="correspondence-form">
                 <form id="discord-form">
@@ -515,7 +613,7 @@
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch('/api/contact', {
+                const response = await fetch('https://api.imono.bro.bd/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
