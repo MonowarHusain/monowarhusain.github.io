@@ -979,8 +979,8 @@
 
             <!-- Pill Filter Tabs -->
             <div class="filter-tabs" role="tablist" aria-label="Project Filtering Tabs">
-                <button type="button" class="filter-tab active" data-filter="all">All (6)</button>
-                <button type="button" class="filter-tab" data-filter="deployed">Deployed Platforms (3)</button>
+                <button type="button" class="filter-tab active" data-filter="all">All (7)</button>
+                <button type="button" class="filter-tab" data-filter="deployed">Deployed Platforms (4)</button>
                 <button type="button" class="filter-tab" data-filter="coursework">Coursework &amp; Systems (3)</button>
             </div>
 
@@ -988,6 +988,42 @@
             <div class="project-tier" data-type="deployed">
                 <h3 class="tier-title">Deployed Platforms &amp; Software</h3>
                 <div class="platform-grid">
+
+                    <!-- MonoRx -->
+                    <div class="platform-card">
+                        <div>
+                            <div class="card-header">
+                                <h4 class="card-title">MonoRx</h4>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span class="live-badge"><span class="live-dot"></span> Live</span>
+                                    <span class="card-meta">2026</span>
+                                </div>
+                            </div>
+                            <p class="card-desc">Full-stack Hospital Information System (HIS) and clinical operations platform built with Next.js, TypeScript, and Firebase. Integrates an offline-first 21,714-medicine Bangladesh MedEx catalog, priority-based RBAC governance, OPD-to-pharmacy clinical workflows, QR-verified medical records, and SLA engineering ticketing.</p>
+                            
+                            <button type="button" class="expand-toggle" aria-expanded="false" data-target="monorx-details">
+                                <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                            </button>
+                            <div id="monorx-details" class="architecture-drawer">
+                                <ul>
+                                    <li><strong>Offline-First 21.7k MedEx Catalog &amp; Safety Engine:</strong> Compiles 21,714 commercial medicines into a compressed indexed JSON engine for sub-5ms multi-token autocomplete, generic brand equivalents, BDT pricing, and real-time drug-allergy cross-reactivity alerts.</li>
+                                    <li><strong>8-Role Priority RBAC &amp; Immutable Audit Trail:</strong> Enforces a 0-indexed authority hierarchy (P0 Super Admin, P1 read-only Admin Oversight, and P2–P7 departmental workstations) backed by Firestore security rules and tamper-proof login, print, and CRUD audit logs.</li>
+                                    <li><strong>End-to-End Clinical, Billing &amp; SLA Suite:</strong> Connects OPD queue management, digital prescriptions, gender-aware pathology reporting, batch pharmacy inventory, BDT invoicing, zero-auth public QR document verification, and Alt+T biomedical/IT SLA ticketing.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <div class="card-tags">
+                                <span class="tech-pill">Next.js</span>
+                                <span class="tech-pill">TypeScript</span>
+                                <span class="tech-pill">Firebase</span>
+                                <span class="tech-pill">Tailwind CSS</span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="https://rx.mono.bro.bd" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- GoMono -->
                     <div class="platform-card">
