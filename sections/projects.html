@@ -1,0 +1,213 @@
+<!-- Interactive Projects Section -->
+<section id="projects">
+    <h2>Selected Projects &amp; Systems</h2>
+
+    <!-- Pill Filter Tabs -->
+    <div class="filter-tabs" role="tablist" aria-label="Project Filtering Tabs">
+        <button type="button" class="filter-tab active" data-filter="all">All (7)</button>
+        <button type="button" class="filter-tab" data-filter="deployed">Deployed Platforms (4)</button>
+        <button type="button" class="filter-tab" data-filter="coursework">Coursework &amp; Systems (3)</button>
+    </div>
+
+    <!-- Tier 1: Deployed Platforms & Software -->
+    <div class="project-tier" data-type="deployed">
+        <h3 class="tier-title">Deployed Platforms &amp; Software</h3>
+        <div class="platform-grid">
+
+            <!-- MonoRx -->
+            <div class="platform-card">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title">MonoRx</h4>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="live-badge"><span class="live-dot"></span> Live</span>
+                            <span class="card-meta">2026</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">Full-stack Hospital Information System (HIS) and clinical operations platform built with Next.js, TypeScript, and Firebase. Integrates an offline-first 21,714-medicine Bangladesh MedEx catalog, priority-based RBAC governance, OPD-to-pharmacy clinical workflows, QR-verified medical records, and SLA engineering ticketing.</p>
+                    
+                    <button type="button" class="expand-toggle" aria-expanded="false" data-target="monorx-details">
+                        <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                    </button>
+                    <div id="monorx-details" class="architecture-drawer">
+                        <ul>
+                            <li><strong>Offline-First 21.7k MedEx Catalog &amp; Safety Engine:</strong> Compiles 21,714 commercial medicines into a compressed indexed JSON engine for sub-5ms multi-token autocomplete, generic brand equivalents, BDT pricing, and real-time drug-allergy cross-reactivity alerts.</li>
+                            <li><strong>8-Role Priority RBAC &amp; Immutable Audit Trail:</strong> Enforces a 0-indexed authority hierarchy (P0 Super Admin, P1 read-only Admin Oversight, and P2–P7 departmental workstations) backed by Firestore security rules and tamper-proof login, print, and CRUD audit logs.</li>
+                            <li><strong>End-to-End Clinical, Billing &amp; SLA Suite:</strong> Connects OPD queue management, digital prescriptions, gender-aware pathology reporting, batch pharmacy inventory, BDT invoicing, zero-auth public QR document verification, and Alt+T biomedical/IT SLA ticketing.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-tags">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">Firebase</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://rx.mono.bro.bd" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GoMono -->
+            <div class="platform-card">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title">GoMono</h4>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="live-badge"><span class="live-dot"></span> Live</span>
+                            <span class="card-meta">2026</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">High-performance, zero-storage URL shortening and link intelligence platform built with Next.js, TypeScript, and Firebase. Pairs dynamic device-based smart routing and click analytics with a client-side Custom QR Studio and an interactive CSV Grid Engine without server-side file storage.</p>
+                    
+                    <button type="button" class="expand-toggle" aria-expanded="false" data-target="gomono-details">
+                        <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                    </button>
+                    <div id="gomono-details" class="architecture-drawer">
+                        <ul>
+                            <li><strong>Zero-Storage QR Studio:</strong> Generates customizable, vector-branded QR codes (Wi-Fi, vCard, App Store, URL) with instant high-res PNG and SVG exports entirely client-side.</li>
+                            <li><strong>Standalone CSV Studio &amp; Grid Engine:</strong> Virtualized browser-based spreadsheet editor supporting bulk sanitization, deduplication, batch QR ZIP exports, and one-click URL shortening.</li>
+                            <li><strong>Smart Routing &amp; Security Suite:</strong> User-agent device routing (iOS/Android/Desktop), password-protected link interception, automated date/click expiration, and real-time click analytics.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-tags">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">Firebase</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://go.mono.bro.bd/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MonoBond -->
+            <div class="platform-card">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title">MonoBond</h4>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="live-badge"><span class="live-dot"></span> Live</span>
+                            <span class="card-meta">2026</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">Full-stack financial utility automating digital vault management and quarterly draw verification for Bangladesh Bank 100 Taka Prize Bonds, with automated email win alerts, searchable public draw archives, member-gated support ticketing, and an AI-assisted admin console.</p>
+                    
+                    <button type="button" class="expand-toggle" aria-expanded="false" data-target="monobond-details">
+                        <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                    </button>
+                    <div id="monobond-details" class="architecture-drawer">
+                        <ul>
+                            <li><strong>Automated Prize Bond Vault:</strong> Enables users to store up to 1,000 zero-padded 7-digit prize bonds via single or bulk import with automated matching against official Bangladesh Bank draw results.</li>
+                            <li><strong>Enterprise Admin &amp; Security Console:</strong> Features an AI-assisted CSV draw importer with strict tier validation, automated transactional win alerts, OAuth authentication with step-up OTP security, and an integrated support ticket system.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-tags">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Auth.js</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://bond.mono.bro.bd/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CGPACalc.pro -->
+            <div class="platform-card">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title">CGPACalc.pro</h4>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="live-badge"><span class="live-dot"></span> Live</span>
+                            <span class="card-meta">2024 – Present</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">Client-side computational utility that securely parses raw university transcripts into interactive degree audits via <code>PDF.js</code> with zero server-side data transmission, integrating algorithmic retake calculations and dynamic track detection.</p>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-tags">
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">PDF.js</span>
+                        <span class="tech-pill">Chart.js</span>
+                        <span class="tech-pill">RegEx</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://cgpacalc.pro.bd" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                        <span class="action-sep">|</span>
+                        <a href="https://github.com/MonowarHusain/bracu_cgpacalc" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tier 2: Academic Coursework & Systems -->
+    <div class="project-tier" data-type="coursework">
+        <h3 class="tier-title">Academic Coursework &amp; Systems</h3>
+        <div class="coursework-list">
+
+            <!-- Meal Distribution System -->
+            <div class="coursework-row">
+                <div class="coursework-header">
+                    <h4 class="coursework-title">Meal Distribution System: Scalable Logistics &amp; Payment Infrastructure</h4>
+                    <span class="coursework-meta">2026 · Database Systems Coursework - Spring'26</span>
+                </div>
+                <p class="coursework-desc">Architected a full-stack logistics platform featuring a 3NF-normalized MySQL database on Aiven. Engineered the core functional engine including secure bKash/Card payment integrations, a real-time kitchen state machine, and administrative oversight portals.</p>
+                <div class="coursework-footer">
+                    <div>
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">Aiven MySQL</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Payment Gateways</span>
+                    </div>
+                    <a href="https://github.com/MonowarHusain/meal-distribution" target="_blank" rel="noopener noreferrer" class="coursework-link">Source Code ↗</a>
+                </div>
+            </div>
+
+            <!-- Medical SOS -->
+            <div class="coursework-row">
+                <div class="coursework-header">
+                    <h4 class="coursework-title">Medical SOS: Real-Time Geolocation Infrastructure</h4>
+                    <span class="coursework-meta">2025 · Database Systems Coursework - Fall'25</span>
+                </div>
+                <p class="coursework-desc">Engineered an emergency response framework designed to optimize medical assistance routing. The system utilizes high-precision browser geolocation APIs to facilitate instant SOS alerting and real-time spatial tracking within a high-stress, accessible interface.</p>
+                <div class="coursework-footer">
+                    <div>
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">React</span>
+                        <span class="tech-pill">Geolocation API</span>
+                    </div>
+                    <a href="https://github.com/MonowarHusain/medical-sos" target="_blank" rel="noopener noreferrer" class="coursework-link">Source Code ↗</a>
+                </div>
+            </div>
+
+            <!-- Tank-Battle-3D -->
+            <div class="coursework-row">
+                <div class="coursework-header">
+                    <h4 class="coursework-title">Tank-Battle-3D</h4>
+                    <span class="coursework-meta">2023 · Computer Graphics Coursework</span>
+                </div>
+                <p class="coursework-desc">Programmed interactive graphical simulations utilizing raw OpenGL bindings, entirely bypassing commercial rendering engines. Emphasis was placed on foundational implementations of Midpoint Line algorithms, matrix transformations, and multi-perspective rendering pipelines.</p>
+                <div class="coursework-footer">
+                    <div>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">OpenGL</span>
+                    </div>
+                    <a href="https://github.com/MonowarHusain/Tank-Battle-3D" target="_blank" rel="noopener noreferrer" class="coursework-link">Source Code ↗</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
