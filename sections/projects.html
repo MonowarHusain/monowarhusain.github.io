@@ -197,17 +197,38 @@
             <!-- Medical SOS -->
             <div class="coursework-row">
                 <div class="coursework-header">
-                    <h4 class="coursework-title">Medical SOS: Real-Time Geolocation Infrastructure</h4>
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <h4 class="coursework-title">Medical SOS: Real-Time Emergency Dispatch &amp; Telemedicine System</h4>
+                        <span class="live-badge"><span class="live-dot"></span> Live</span>
+                    </div>
                     <span class="coursework-meta">2025 · Database Systems Coursework - Fall'25</span>
                 </div>
-                <p class="coursework-desc">Engineered an emergency response framework designed to optimize medical assistance routing. The system utilizes high-precision browser geolocation APIs to facilitate instant SOS alerting and real-time spatial tracking within a high-stress, accessible interface.</p>
+                <p class="coursework-desc">Full-stack emergency healthcare, telemedicine, and pharmacy management platform built with Next.js App Router, TypeScript, Prisma, Neon Serverless PostgreSQL, and Tailwind CSS. Features one-tap emergency SOS dispatch with GPS fallback, digital doctor consultation queues with prescription issuance, multi-item pharmacy ordering with rider fulfillment, and an instant live database role switcher.</p>
+                
+                <button type="button" class="expand-toggle" aria-expanded="false" data-target="medsos-details">
+                    <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                </button>
+                <div id="medsos-details" class="architecture-drawer">
+                    <ul>
+                        <li><strong>Relational PostgreSQL Architecture &amp; Connection Resiliency:</strong> Backed by Neon Serverless PostgreSQL and Prisma ORM with connection pooling, dual serverless binary targets (<code>native</code>, <code>rhel-openssl-3.0.x</code>), and strict foreign key relations modeling emergency calls, appointments, multi-item orders, and user health cards.</li>
+                        <li><strong>Five-Role RBAC &amp; Lifecycle State Machine:</strong> Enforces deterministic role routing across Patient, Doctor, Driver, Delivery, and Admin domains using Next.js Server Actions, tracking chronological status progressions from SOS dispatch to doctor prescription completion and doorstep pharmacy package delivery.</li>
+                        <li><strong>Live Demo Switcher &amp; Graceful Geolocation:</strong> Features an on-screen instant database role mutator and one-click account switcher for viva evaluations, paired with automated central Dhaka GPS fallback (<code>23.8103, 90.4125</code>) ensuring uninterrupted distress signaling when browser geolocation is unavailable.</li>
+                    </ul>
+                </div>
+
                 <div class="coursework-footer">
                     <div>
                         <span class="tech-pill">Next.js</span>
-                        <span class="tech-pill">React</span>
-                        <span class="tech-pill">Geolocation API</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">PostgreSQL (Neon)</span>
+                        <span class="tech-pill">Prisma</span>
+                        <span class="tech-pill">Tailwind CSS</span>
                     </div>
-                    <a href="https://github.com/MonowarHusain/medical-sos" target="_blank" rel="noopener noreferrer" class="coursework-link">Source Code ↗</a>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <a href="https://medical-sos-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="coursework-link" style="margin-left: 0;">Live Site ↗</a>
+                        <span class="action-sep">|</span>
+                        <a href="https://github.com/MonowarHusain/medical-sos" target="_blank" rel="noopener noreferrer" class="coursework-link" style="margin-left: 0;">Source Code ↗</a>
+                    </div>
                 </div>
             </div>
 
