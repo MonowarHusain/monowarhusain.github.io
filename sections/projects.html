@@ -5,8 +5,8 @@
     <!-- Pill Filter Tabs -->
     <div class="filter-tabs" role="tablist" aria-label="Project Filtering Tabs">
         <button type="button" class="filter-tab active" data-filter="all">All (7)</button>
-        <button type="button" class="filter-tab" data-filter="deployed">Deployed Platforms (4)</button>
-        <button type="button" class="filter-tab" data-filter="coursework">Coursework &amp; Systems (3)</button>
+        <button type="button" class="filter-tab" data-filter="deployed">Deployed Platforms (5)</button>
+        <button type="button" class="filter-tab" data-filter="coursework">Coursework &amp; Systems (2)</button>
     </div>
 
     <!-- Tier 1: Deployed Platforms & Software -->
@@ -122,6 +122,44 @@
                 </div>
             </div>
 
+            <!-- Meal Distribution System -->
+            <div class="platform-card">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title">Meal Distribution System</h4>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="live-badge"><span class="live-dot"></span> Live</span>
+                            <span class="card-meta">2026</span>
+                        </div>
+                    </div>
+                    <p class="card-desc">Full-stack institutional catering and logistics orchestration platform built with Next.js App Router, Neon Serverless PostgreSQL, and Tailwind CSS. Features a 3NF relational architecture powering four role-segregated portals, a multi-stage kitchen order state machine, simulated bKash/Card payment processing, customer item reviews, and an instant zero-friction demo role switcher.</p>
+                    
+                    <button type="button" class="expand-toggle" aria-expanded="false" data-target="mealdist-details">
+                        <span>Architecture Highlights</span> <span class="toggle-icon">▾</span>
+                    </button>
+                    <div id="mealdist-details" class="architecture-drawer">
+                        <ul>
+                            <li><strong>Serverless PostgreSQL &amp; 3NF Relational Layer:</strong> Backed by Neon Serverless PostgreSQL with pooled connections, normalized 3NF schemas (<code>Order</code>, <code>Order_History</code>, <code>Payment</code>), idempotent migrations, and automatic casing normalization for resilient serverless execution.</li>
+                            <li><strong>Four-Tier RBAC &amp; Lifecycle State Machine:</strong> Enforces role governance across Customer, Kitchen, Delivery, and Admin domains using HTTP-only session cookies and proxy middleware. Tracks order progression through strict chronological stages (<code>Pending</code> &rarr; <code>Kitchen_Accepted</code> &rarr; <code>Cooking_Done</code> &rarr; <code>Dispatched</code> &rarr; <code>Delivered</code>).</li>
+                            <li><strong>Instant Demo Switcher &amp; Commerce Engine:</strong> Incorporates a floating, zero-logout role switcher for recruiter evaluations, a reactive menu catalog with cart state management, simulated digital checkout, and verified post-delivery star-rating feedback loops.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="card-tags">
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">PostgreSQL (Neon)</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Node.js</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://meal-distribution.vercel.app/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+                        <span class="action-sep">|</span>
+                        <a href="https://github.com/MonowarHusain/meal-distribution" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- CGPACalc.pro -->
             <div class="platform-card">
                 <div>
@@ -156,24 +194,6 @@
     <div class="project-tier" data-type="coursework">
         <h3 class="tier-title">Academic Coursework &amp; Systems</h3>
         <div class="coursework-list">
-
-            <!-- Meal Distribution System -->
-            <div class="coursework-row">
-                <div class="coursework-header">
-                    <h4 class="coursework-title">Meal Distribution System: Scalable Logistics &amp; Payment Infrastructure</h4>
-                    <span class="coursework-meta">2026 · Database Systems Coursework - Spring'26</span>
-                </div>
-                <p class="coursework-desc">Architected a full-stack logistics platform featuring a 3NF-normalized MySQL database on Aiven. Engineered the core functional engine including secure bKash/Card payment integrations, a real-time kitchen state machine, and administrative oversight portals.</p>
-                <div class="coursework-footer">
-                    <div>
-                        <span class="tech-pill">Next.js</span>
-                        <span class="tech-pill">Aiven MySQL</span>
-                        <span class="tech-pill">Tailwind CSS</span>
-                        <span class="tech-pill">Payment Gateways</span>
-                    </div>
-                    <a href="https://github.com/MonowarHusain/meal-distribution" target="_blank" rel="noopener noreferrer" class="coursework-link">Source Code ↗</a>
-                </div>
-            </div>
 
             <!-- Medical SOS -->
             <div class="coursework-row">
@@ -211,3 +231,4 @@
         </div>
     </div>
 </section>
+
